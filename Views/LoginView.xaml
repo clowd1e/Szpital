@@ -145,24 +145,39 @@
                                FontWeight="Medium"
                                FontFamily="{StaticResource Nunito}"
                                Margin="0 20 0 0"/>
-                    <TextBox Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"
-                             MaxLength="20"
-                             FontSize="13"
-                             FontWeight="Medium"
-                             FontFamily="{StaticResource Nunito}"
-                             Foreground="White"
-                             CaretBrush="LightGray"
-                             BorderBrush="DarkGray"
-                             BorderThickness="0 0 0 1"
-                             Height="20"
-                             VerticalContentAlignment="Center"
-                             Margin="0 5 0 0"
-                             Padding="20 0 0 0">
-                        <TextBox.Background>
-                            <ImageBrush ImageSource="/Images/user_128.png" Stretch="Uniform"
-                                        AlignmentX="Left"/>
-                        </TextBox.Background>
-                    </TextBox>
+                    <Grid>
+                        <TextBox Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"
+                                 MaxLength="20"
+                                 x:Name="UsernameBox"
+                                 FontSize="13"
+                                 FontWeight="Medium"
+                                 FontFamily="{StaticResource Nunito}"
+                                 Foreground="White"
+                                 CaretBrush="LightGray"
+                                 BorderBrush="DarkGray"
+                                 BorderThickness="0 0 0 1"
+                                 Height="20"
+                                 VerticalContentAlignment="Center"
+                                 Margin="0 5 0 0"
+                                 Padding="20 0 0 0">
+                            <TextBox.Background>
+                                <ImageBrush ImageSource="/Images/user_128.png" Stretch="Uniform"
+                    AlignmentX="Left"/>
+                            </TextBox.Background>
+                        </TextBox>
+                        <TextBlock IsHitTestVisible="False" Text="Wprowadź użytkownika" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="22,2,0,0" Foreground="DarkGray">
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Text, ElementName=UsernameBox}" Value="">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
 
                     <TextBlock Text="Hasło"
                                Foreground="{StaticResource loginLabelColor}"
@@ -170,10 +185,25 @@
                                FontWeight="Medium"
                                FontFamily="{StaticResource Nunito}"
                                Margin="0 20 0 0"/>
-                    <components:BindableLoginPasswordBox Password="{Binding Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
-                             Margin="0 5 0 0"
-                             Height="20">
-                    </components:BindableLoginPasswordBox>
+                    <Grid>
+                        <components:BindableLoginPasswordBox Password="{Binding Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                                             Margin="0 5 0 0"
+                                                             x:Name="PasswordBox"
+                                                             Height="20">
+                        </components:BindableLoginPasswordBox>
+                        <TextBlock IsHitTestVisible="False" Text="Wprowadź hasło" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="22,2,0,0" Foreground="DarkGray">
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Password, ElementName=PasswordBox}" Value="">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
 
                     <TextBlock Visibility="{Binding HasErrorMessage, Converter={StaticResource BooleanToVisibilityConverter}}"
                                Text="{Binding ErrorMessage}"
