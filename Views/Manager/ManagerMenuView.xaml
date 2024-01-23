@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="Szpital.Views.Manager.ManagerMenuView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Szpital.Views.Manager" xmlns:fa="http://schemas.fontawesome.io/icons/" xmlns:viewmodels="clr-namespace:Szpital.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:ManagerMenuViewModel}"
+             mc:Ignorable="d" d:DesignWidth="250">
+    <Grid>
+        <StackPanel Margin="0 25 0 0">
+            <RadioButton Style="{StaticResource menuButton}" GroupName="MenuButtons"
+                     Tag="{StaticResource color1}"
+                     Command="{Binding ChangeToHome}"
+                     IsChecked="{Binding HomeChecked}">
+                <StackPanel Orientation="Horizontal">
+                    <fa:ImageAwesome Icon="Home" Style="{StaticResource menuButtonIcon}" />
+                    <TextBlock Text="Pulpit" Style="{StaticResource menuButtonText}"/>
+                </StackPanel>
+            </RadioButton>
+
+            <RadioButton Style="{StaticResource menuButton}" GroupName="MenuButtons"
+                     Command="{Binding ChangeToDoctors}"
+                     Tag="{StaticResource color7}"
+                     IsChecked="{Binding DoctorsChecked}">
+                <StackPanel Orientation="Horizontal">
+                    <fa:ImageAwesome Icon="Group" Style="{StaticResource menuButtonIcon}" />
+                    <TextBlock Text="Lekarze" Style="{StaticResource menuButtonText}"/>
+                </StackPanel>
+            </RadioButton>
+
+            <RadioButton Style="{StaticResource menuButton}" GroupName="MenuButtons"
+                     Tag="{StaticResource color3}"
+                     Command="{Binding ChangeToUserInfo}"
+                     IsChecked="{Binding UserInfoChecked}">
+                <StackPanel Orientation="Horizontal">
+                    <fa:ImageAwesome Icon="User" Style="{StaticResource menuButtonIcon}" />
+                    <TextBlock Text="Dane personalne" Style="{StaticResource menuButtonText}"/>
+                </StackPanel>
+            </RadioButton>
+
+            <RadioButton Style="{StaticResource menuButton}" GroupName="MenuButtons"
+                     Tag="{StaticResource color4}"
+                     Command="{Binding Logout}">
+                <StackPanel Orientation="Horizontal">
+                    <fa:ImageAwesome Icon="ArrowCircleLeft" Style="{StaticResource menuButtonIcon}" />
+                    <TextBlock Text="Wyloguj się" Style="{StaticResource menuButtonText}"/>
+                </StackPanel>
+            </RadioButton>
+        </StackPanel>
+    </Grid>
+</UserControl>

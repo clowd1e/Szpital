@@ -1,0 +1,97 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:fa="http://schemas.fontawesome.io/icons/">
+    <Style x:Key="HomeBorder" TargetType="Border">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="CornerRadius" Value="50"/>
+        <Setter Property="Width" Value="950"/>
+        <Setter Property="Height" Value="600"/>
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0 0" EndPoint="1 1">
+                    <GradientStop Color="{StaticResource mainBackColor1}" Offset="0" />
+                    <GradientStop Color="{StaticResource mainBackColor2}" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect BlurRadius="50" Direction="0" ShadowDepth="0" Opacity="0.25"></DropShadowEffect>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="HomeWelcomeTextBlock" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource Nunito}"/>
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="FontSize" Value="50" />
+        <Setter Property="Margin" Value="30 50 0 0" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="Width" Value="800" />
+    </Style>
+
+    <Style x:Key="HomeButton" TargetType="Button">
+        <Setter Property="Margin" Value="10" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Height" Value="200" />
+        <Setter Property="Width" Value="200" />
+        <Setter Property="Foreground" Value="#dadada" />
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0 0" EndPoint="1 1">
+                    <GradientStop Color="{StaticResource mainBackColor7}" Offset="0" />
+                    <GradientStop Color="{StaticResource mainBackColor8}" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            CornerRadius="25">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect BlurRadius="20" Direction="0" ShadowDepth="0" Opacity="0.25"></DropShadowEffect>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="White" />
+                <Setter Property="Effect">
+                    <Setter.Value>
+                        <DropShadowEffect BlurRadius="50" Direction="0" ShadowDepth="0" Opacity="0.5"></DropShadowEffect>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="homeButtonIcon" TargetType="fa:ImageAwesome">
+        <Setter Property="Foreground" Value="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=Button}}" />
+        <Setter Property="Width" Value="85" />
+        <Setter Property="Height" Value="85" />
+    </Style>
+
+    <Style x:Key="homeButtonText" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=Button}}" />
+        <Setter Property="FontFamily" Value="{StaticResource Nunito}" />
+        <Setter Property="FontSize" Value="25"/>
+        <Setter Property="Margin" Value="0 10 0 0" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="changePasswordText" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="FontFamily" Value="{StaticResource Nunito}" />
+        <Setter Property="FontSize" Value="25"/>
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+</ResourceDictionary>

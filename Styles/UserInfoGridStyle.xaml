@@ -1,0 +1,54 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!--user info border style-->
+    <Style x:Key="userInfoBorder" TargetType="Border">
+        <Setter Property="Margin" Value="150 50" />
+        <Setter Property="Height" Value="1000" />
+        <Setter Property="CornerRadius" Value="50" />
+        <!--<Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />-->
+        <Setter Property="Background" Value="{StaticResource userBorderBackColor1}" />
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect BlurRadius="50" Direction="0" ShadowDepth="0" Opacity="0.25"></DropShadowEffect>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="userColumnBorder" TargetType="Border">
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="black"/>
+    </Style>
+
+    <Style x:Key="userInfoGrid" TargetType="Grid">
+        <Setter Property="Margin" Value="50"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="BorderThickness" Value="0 0 0 1"/>
+                <Setter Property="BorderBrush" Value="black"/>
+            </Style>
+            <Style TargetType="TextBlock">
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="FontFamily" Value="{StaticResource Nunito}"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+            </Style>
+        </Style.Resources>
+    </Style>
+
+    <Style x:Key="passwordRulesBulletDecorator" TargetType="Ellipse">
+        <Setter Property="Width" Value="10" />
+        <Setter Property="Height" Value="10" />
+        <Setter Property="Fill" Value="White" />
+    </Style>
+    
+    <Style x:Key="passwordRulesText" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource Nunito}" />
+        <Setter Property="FontSize" Value="25" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="FontWeight" Value="Medium" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="Margin" Value="10 0 0 0" />
+    </Style>
+</ResourceDictionary>

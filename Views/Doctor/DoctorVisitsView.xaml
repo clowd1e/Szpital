@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="Szpital.Views.Doctor.DoctorVisitsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Szpital.Views.Doctor" xmlns:viewmodels="clr-namespace:Szpital.ViewModels"
+             mc:Ignorable="d">
+    <UserControl.DataContext>
+        <viewmodels:DoctorVisitsViewModel></viewmodels:DoctorVisitsViewModel>
+    </UserControl.DataContext>
+    <Border CornerRadius="0 0 10 0">
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock>
+                FDSSPIFISDHPFSIDUHSDUk
+            </TextBlock>
+            <TextBox Margin="0 20 0 0"></TextBox>
+        </Grid>
+    </Border>
+</UserControl>

@@ -1,0 +1,89 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="fonts\Nunito-Italic-VariableFont_wght.ttf" />
+    <None Remove="fonts\Nunito-VariableFont_wght.ttf" />
+    <None Remove="fonts\static\Nunito-Black.ttf" />
+    <None Remove="fonts\static\Nunito-BlackItalic.ttf" />
+    <None Remove="fonts\static\Nunito-Bold.ttf" />
+    <None Remove="fonts\static\Nunito-BoldItalic.ttf" />
+    <None Remove="fonts\static\Nunito-ExtraBold.ttf" />
+    <None Remove="fonts\static\Nunito-ExtraBoldItalic.ttf" />
+    <None Remove="fonts\static\Nunito-ExtraLight.ttf" />
+    <None Remove="fonts\static\Nunito-ExtraLightItalic.ttf" />
+    <None Remove="fonts\static\Nunito-Italic.ttf" />
+    <None Remove="fonts\static\Nunito-Light.ttf" />
+    <None Remove="fonts\static\Nunito-LightItalic.ttf" />
+    <None Remove="fonts\static\Nunito-Medium.ttf" />
+    <None Remove="fonts\static\Nunito-MediumItalic.ttf" />
+    <None Remove="fonts\static\Nunito-Regular.ttf" />
+    <None Remove="fonts\static\Nunito-SemiBold.ttf" />
+    <None Remove="fonts\static\Nunito-SemiBoldItalic.ttf" />
+    <None Remove="images\Icon.png" />
+    <None Remove="images\main_log.png" />
+    <None Remove="images\padlock.png" />
+    <None Remove="images\padlock1.png" />
+    <None Remove="images\sign-out.png" />
+    <None Remove="images\user.png" />
+    <None Remove="images\user_128.png" />
+    <None Remove="images\user_16.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="bin\Debug\net8.0-windows\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FontAwesome.WPF" Version="4.7.0.9" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="fonts\Nunito-Italic-VariableFont_wght.ttf" />
+    <Resource Include="fonts\Nunito-VariableFont_wght.ttf" />
+    <Resource Include="fonts\static\Nunito-Black.ttf" />
+    <Resource Include="fonts\static\Nunito-BlackItalic.ttf" />
+    <Resource Include="fonts\static\Nunito-Bold.ttf" />
+    <Resource Include="fonts\static\Nunito-BoldItalic.ttf" />
+    <Resource Include="fonts\static\Nunito-ExtraBold.ttf" />
+    <Resource Include="fonts\static\Nunito-ExtraBoldItalic.ttf" />
+    <Resource Include="fonts\static\Nunito-ExtraLight.ttf" />
+    <Resource Include="fonts\static\Nunito-ExtraLightItalic.ttf" />
+    <Resource Include="fonts\static\Nunito-Italic.ttf" />
+    <Resource Include="fonts\static\Nunito-Light.ttf" />
+    <Resource Include="fonts\static\Nunito-LightItalic.ttf" />
+    <Resource Include="fonts\static\Nunito-Medium.ttf" />
+    <Resource Include="fonts\static\Nunito-MediumItalic.ttf" />
+    <Resource Include="fonts\static\Nunito-Regular.ttf" />
+    <Resource Include="fonts\static\Nunito-SemiBold.ttf" />
+    <Resource Include="fonts\static\Nunito-SemiBoldItalic.ttf" />
+    <Resource Include="images\icon.png" />
+    <Resource Include="images\main_log.png" />
+    <Resource Include="images\padlock.png" />
+    <Resource Include="images\padlock1.png" />
+    <Resource Include="images\sign-out.png" />
+    <Resource Include="images\user.png" />
+    <Resource Include="images\user_128.png" />
+    <Resource Include="images\user_16.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Components\BindableLoginPasswordBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+</Project>

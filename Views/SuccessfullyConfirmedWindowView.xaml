@@ -1,0 +1,32 @@
+﻿<Window x:Class="Szpital.Views.SuccessfullyConfirmedWindowView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Szpital.Views"
+        mc:Ignorable="d"
+        Title="SuccessfullyConfirmedWindowView" Height="300" Width="500"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent">
+    <Border CornerRadius="50">
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0 0" EndPoint="1 1">
+                <GradientStop Color="{StaticResource confirmBackColor1}" Offset="0"></GradientStop>
+                <GradientStop Color="{StaticResource confirmBackColor2}" Offset="1"></GradientStop>
+            </LinearGradientBrush>
+        </Border.Background>
+
+        <StackPanel VerticalAlignment="Center">
+            <TextBlock Margin="0" HorizontalAlignment="Center" TextAlignment="Center" FontSize="30" Width="400" Text="Hasło zostało zmienione" Style="{StaticResource HomeWelcomeTextBlock}"/>
+            <StackPanel Margin="0 50 0 0" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button
+                        Content="Ok"
+                        Command="{Binding Close}"
+                        Style="{StaticResource BlueButton}"/>
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</Window>
