@@ -25,7 +25,7 @@ namespace Szpital.ViewModels
             this.navigationStore = navigationStore;
             this.mainViewModel = mainViewModel;
 
-            ChangeToEmployees = new GeneralManagerHomeNavigateCommand(navigationStore, nameof(ChangeToEmployees), generalManagerMenuViewModel, new GeneralManagerEmployeesViewModel());
+            ChangeToEmployees = new GeneralManagerHomeNavigateCommand(navigationStore, nameof(ChangeToEmployees), generalManagerMenuViewModel, new GeneralManagerEmployeesViewModel(navigationStore, mainViewModel, employee));
             ChangeToUserInfo = new GeneralManagerHomeNavigateCommand(navigationStore, nameof(ChangeToUserInfo), generalManagerMenuViewModel, new UserInfoViewModel(navigationStore, mainViewModel, employee, account));
 
             navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;

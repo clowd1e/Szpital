@@ -33,7 +33,7 @@ namespace Szpital.ViewModels
             this.mainViewModel = mainViewModel;
 
             ChangeToVisits = new ReceptionistHomeNavigateCommand(navigationStore, nameof(ChangeToVisits), receptionistMenuViewModel, new ReceptionistVisitsViewModel());
-            ChangeToDoctors = new ReceptionistHomeNavigateCommand(navigationStore, nameof(ChangeToDoctors), receptionistMenuViewModel, new ReceptionistDoctorsViewModel());
+            ChangeToDoctors = new ReceptionistHomeNavigateCommand(navigationStore, nameof(ChangeToDoctors), receptionistMenuViewModel, new ReceptionistDoctorsViewModel(navigationStore, mainViewModel, employee));
             ChangeToAddPatient = new ReceptionistHomeNavigateCommand(navigationStore, nameof(ChangeToAddPatient), receptionistMenuViewModel, new ReceptionistAddPatientViewModel());
             ChangeToUserInfo = new ReceptionistHomeNavigateCommand(navigationStore, nameof(ChangeToUserInfo), receptionistMenuViewModel, new UserInfoViewModel(navigationStore, mainViewModel, employee, account));
 

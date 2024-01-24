@@ -154,7 +154,7 @@ namespace Szpital.DbContexts
             using (SqlConnection connection = new SqlConnection(connectionStr))
             {
                 connection.Open();
-                string selectDoctorsQuery = $@"select * from Employees where Department_id = (select Department_id from Employees where Employee_id = {employee.EmployeeId}) and Position != 'Kierownik'";
+                string selectDoctorsQuery = $@"select Employee_id, First_name, Last_name from Employees where Department_id = (select Department_id from Employees where Employee_id = {employee.EmployeeId}) and Position != 'Kierownik'";
 
                 using (SqlCommand selectDoctorsCommand = new SqlCommand(selectDoctorsQuery, connection))
                 using (SqlDataReader reader = selectDoctorsCommand.ExecuteReader())
@@ -178,6 +178,59 @@ namespace Szpital.DbContexts
                 );
 
             return managerDoctorListItemViewModel;
+        }
+
+        public static ObservableCollection<GMDListItemViewModel>? GetAllGMEmployees()
+        {
+            ObservableCollection<GMDListItemViewModel> result = new ObservableCollection<GMDListItemViewModel>();
+            using (SqlConnection connection = new SqlConnection(connectionStr))
+            {
+                connection.Open();
+                string selectEmployeesQuery = $@"select Employee_id, First_name, Last_name from Employees where Position != 'Główny kierownik'";
+
+                using (SqlCommand selectEmployeesCommand = new SqlCommand(selectEmployeesQuery, connection))
+                using (SqlDataReader reader = selectEmployeesCommand.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        result.Add(MapDataToGeneralManagerDoctorListItemViewModel(reader));
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        private static GMDListItemViewModel MapDataToGeneralManagerDoctorListItemViewModel(SqlDataReader reader)
+        {
+            GMDListItemViewModel generalManagerDoctorListItemViewModel = new GMDListItemViewModel(
+                (int)reader["Employee_id"],
+                reader["First_name"].ToString(),
+                reader["Last_name"].ToString()
+                );
+
+            return generalManagerDoctorListItemViewModel;
+        }
+
+        public static ObservableCollection<MDListItemViewModel>? GetAllDoctors()
+        {
+            ObservableCollection<MDListItemViewModel> result = new ObservableCollection<MDListItemViewModel>();
+            using (SqlConnection connection = new SqlConnection(connectionStr))
+            {
+                connection.Open();
+                string selectDoctorsQuery = $@"select Employee_id, First_name, Last_name from Employees where Position = 'Doktor'";
+
+                using (SqlCommand selectDoctorsCommand = new SqlCommand(selectDoctorsQuery, connection))
+                using (SqlDataReader reader = selectDoctorsCommand.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        result.Add(MapDataToManagerDoctorListItemViewModel(reader));
+                    }
+                }
+            }
+
+            return result;
         }
 
 
