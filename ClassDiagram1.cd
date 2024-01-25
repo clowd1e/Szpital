@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Szpital.Models.Account">
+    <Position X="5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAACAAAAAAACAAA=</HashCode>
+      <FileName>Models\Account.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.Models.Employee" BaseTypeListCollapsed="true">
+    <Position X="7" Y="1" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAGAAECAAAAEogAAAQAQAAAACAAACAAAAAQACAAg=</HashCode>
+      <FileName>Models\Employee.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Right" Position="1.411" />
+  </Class>
+  <Class Name="Szpital.Models.Visit">
+    <Position X="1.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACCAAAAAQAAAAAAABAAAAAAAAACAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Models\Visit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.Models.VisitSchedule">
+    <Position X="3.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAEAIAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Models\VisitSchedule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.ViewModels.Doctor.DoctorHomeViewModel">
+    <Position X="18.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAIEAEIAAIAAAABAAAAAAAAIAAAACAAAA=</HashCode>
+      <FileName>ViewModels\Doctor\DoctorHomeViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.ViewModels.Doctor.DoctorMenuViewModel">
+    <Position X="23.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIEAEIEIAAAJCBAgAAAAIAAAAAACAAAg=</HashCode>
+      <FileName>ViewModels\Doctor\DoctorMenuViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.ViewModels.Doctor.DoctorVisitsViewModel">
+    <Position X="21" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\Doctor\DoctorVisitsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.ViewModels.ViewModelBase">
+    <Position X="27.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\ViewModelBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Szpital.ViewModels.GeneralManager.GeneralManagerEmployeesViewModel">
+    <Position X="20.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\GeneralManager\GeneralManagerEmployeesViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.ViewModels.GeneralManager.GeneralManagerHomeViewModel">
+    <Position X="23" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAIEAAIAAIAAAABAAAAAAAAIBAAACAAAA=</HashCode>
+      <FileName>ViewModels\GeneralManager\GeneralManagerHomeViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.ViewModels.GeneralManager.GeneralManagerMenuViewModel">
+    <Position X="18.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIEAAIEIAAAJCBAAAAAQIAABAAADAAAA=</HashCode>
+      <FileName>ViewModels\GeneralManager\GeneralManagerMenuViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.ViewModels.GeneralManager.GMDListItemViewModel">
+    <Position X="25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAg=</HashCode>
+      <FileName>ViewModels\GeneralManager\GMDListItemViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.ViewModels.Manager.ManagerDoctorsViewModel">
+    <Position X="12.25" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAgAAAAIAAAA=</HashCode>
+      <FileName>ViewModels\Manager\ManagerDoctorsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.ViewModels.Manager.ManagerHomeViewModel">
+    <Position X="14" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAIEAAIAAIAAAABAABAAAAAIAAAACAAAA=</HashCode>
+      <FileName>ViewModels\Manager\ManagerHomeViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.ViewModels.Manager.ManagerMenuViewModel">
+    <Position X="7.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAIEAAIEIAAAJCBAABAAAIAAAAAACAIAA=</HashCode>
+      <FileName>ViewModels\Manager\ManagerMenuViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.ViewModels.Manager.MDListItemViewModel">
+    <Position X="10" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>ViewModels\Manager\MDListItemViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.ViewModels.Receptionist.ReceptionistAddPatientViewModel">
+    <Position X="41.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAEAAEABBAAAIBCIAaARAAVINACEaBAAiCAAgAAg=</HashCode>
+      <FileName>ViewModels\Receptionist\ReceptionistAddPatientViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.ViewModels.Receptionist.ReceptionistDoctorsViewModel">
+    <Position X="37.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAIAAAA=</HashCode>
+      <FileName>ViewModels\Receptionist\ReceptionistDoctorsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.ViewModels.Receptionist.ReceptionistHomeViewModel">
+    <Position X="39.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAIEAEIAAIAAAABAAJAAAAAIAAAACAAAA=</HashCode>
+      <FileName>ViewModels\Receptionist\ReceptionistHomeViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.ViewModels.Receptionist.ReceptionistMenuViewModel">
+    <Position X="32" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAYEAEIEIAAAJCBAgJAAAIAAAAAACAIAg=</HashCode>
+      <FileName>ViewModels\Receptionist\ReceptionistMenuViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.ViewModels.Receptionist.ReceptionistVisitsViewModel">
+    <Position X="34" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\Receptionist\ReceptionistVisitsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.ViewModels.ChangePasswordViewModel">
+    <Position X="32.75" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAgAAACAAAAiAAFABAAAAAAAEAAAABAAAAAAAAAgAA=</HashCode>
+      <FileName>ViewModels\ChangePasswordViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.ViewModels.ConfirmWindowViewModel">
+    <Position X="36.5" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\ConfirmWindowViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.ViewModels.LoginWindowViewModel">
+    <Position X="41" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAEACAAAAAAAAQAAAAEAAAAAAAACAAAAAgCAAAA=</HashCode>
+      <FileName>ViewModels\LoginWindowViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.ViewModels.MainViewModel">
+    <Position X="34.75" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAQAAAAAAAAAAEAAAAAAAAAABAQAAAAAAAAAAAAAhAQ=</HashCode>
+      <FileName>ViewModels\MainViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.ViewModels.SuccessfullyConfirmedWindowViewModel">
+    <Position X="38.5" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAACAAAA=</HashCode>
+      <FileName>ViewModels\SuccessfullyConfirmedWindowViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.ViewModels.UserInfoViewModel">
+    <Position X="43" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAGAAECAAoEEKIAAIQAQABAACAAACAAAAAAACAAg=</HashCode>
+      <FileName>ViewModels\UserInfoViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.Commands.AddPatientCommand">
+    <Position X="17.5" Y="19" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQEAIEUAQQAQIIAAAQAQAAAAAAAACABAAAAAAAAg=</HashCode>
+      <FileName>Commands\AddPatientCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.Commands.CancelCommand">
+    <Position X="19.5" Y="26" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAIAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\CancelCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.Commands.ChangePasswordCommand">
+    <Position X="22.75" Y="19.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQQAQAIAAIAAAAAAAAAAAAAAAEQAAAAAA=</HashCode>
+      <FileName>Commands\ChangePasswordCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.Commands.CommandBase">
+    <Position X="21.5" Y="23" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAQAAEQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\CommandBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Szpital.Commands.ConfirmCommand">
+    <Position X="15.25" Y="24" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAIBAAAAAAIAAA=</HashCode>
+      <FileName>Commands\ConfirmCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.Commands.DoctorHomeNavigateCommand">
+    <Position X="20" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAARAAAAQAAAABAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\DoctorHomeNavigateCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.Commands.GeneralManagerHomeNavigateCommand">
+    <Position X="25" Y="25.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAARAAAAQAAAABAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Commands\GeneralManagerHomeNavigateCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.Commands.LoginCommand">
+    <Position X="27.75" Y="23" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAQAAAAAAAAAAAAAQAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Commands\LoginCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.Commands.LogoutCommand">
+    <Position X="17" Y="26.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\LogoutCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.Commands.ManagerHomeNavigateCommand">
+    <Position X="21.75" Y="25.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAARAAAAQAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\ManagerHomeNavigateCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.Commands.NavigateCommand">
+    <Position X="24.75" Y="22.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAQAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\NavigateCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.Commands.ReceptionistHomeNavigateCommand">
+    <Position X="25.5" Y="19.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAARAAAAQAAAABAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\ReceptionistHomeNavigateCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.DbContexts.DbContext">
+    <Position X="4.75" Y="22" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AQAAAIAAAAAAggAAAAQCBBAAAEQAAAAEAACCAgAAAAA=</HashCode>
+      <FileName>DbContexts\DbContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Szpital.Stores.NavigationStore">
+    <Position X="9" Y="22.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAIAAAAIEAEAABAAAAAAAAAAAAAAgAAAAAAAAQ=</HashCode>
+      <FileName>Stores\NavigationStore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Szpital.Models.IEmployee">
+    <Position X="9.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAGAAECAAAAEogAAAQAQAAAACAAACAAAAAQACAAg=</HashCode>
+      <FileName>Models\IEmployee.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
