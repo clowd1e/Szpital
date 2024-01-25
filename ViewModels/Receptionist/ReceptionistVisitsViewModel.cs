@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Szpital.ViewModels
+namespace Szpital.ViewModels.Receptionist
 {
     public class ReceptionistVisitsViewModel : ViewModelBase
     {

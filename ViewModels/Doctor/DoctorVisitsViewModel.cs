@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Szpital.ViewModels
+namespace Szpital.ViewModels.Doctor
 {
-    public class MainUserWindowViewModel : ViewModelBase
+    public class DoctorVisitsViewModel : ViewModelBase
     {
-
+        public DoctorVisitsViewModel() { }
     }
 }

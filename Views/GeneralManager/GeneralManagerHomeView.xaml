@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Szpital.Views.GeneralManager" xmlns:fa="http://schemas.fontawesome.io/icons/" xmlns:viewmodels="clr-namespace:Szpital.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:GeneralManagerHomeViewModel}"
+             xmlns:local="clr-namespace:Szpital.Views.GeneralManager" xmlns:fa="http://schemas.fontawesome.io/icons/" xmlns:genManager="clr-namespace:Szpital.ViewModels.GeneralManager" d:DataContext="{d:DesignInstance Type=genManager:GeneralManagerHomeViewModel}"
              mc:Ignorable="d">
     <Border CornerRadius="0 0 10 0">
         <Border Style="{StaticResource HomeBorder}">

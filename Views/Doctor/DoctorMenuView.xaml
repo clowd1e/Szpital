@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Szpital.Views.Doctor"
-             xmlns:fa="http://schemas.fontawesome.io/icons/" xmlns:viewmodels="clr-namespace:Szpital.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:DoctorMenuViewModel}"
+             xmlns:fa="http://schemas.fontawesome.io/icons/" xmlns:doctor="clr-namespace:Szpital.ViewModels.Doctor" d:DataContext="{d:DesignInstance Type=doctor:DoctorMenuViewModel}"
              mc:Ignorable="d"  d:DesignWidth="250">
     <Grid>
         <StackPanel Margin="0 25 0 0">

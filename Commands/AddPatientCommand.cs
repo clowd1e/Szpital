@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Szpital.DbContexts;
 using Szpital.Exceptions;
 using Szpital.ViewModels;
+using Szpital.ViewModels.Receptionist;
 using Szpital.Views;
 
 namespace Szpital.Commands

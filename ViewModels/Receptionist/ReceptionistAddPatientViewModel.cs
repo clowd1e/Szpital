@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Szpital.Commands;
 
-namespace Szpital.ViewModels
+namespace Szpital.ViewModels.Receptionist
 {
     public class ReceptionistAddPatientViewModel : ViewModelBase
     {
@@ -14,7 +14,7 @@ namespace Szpital.ViewModels
         private string firstName;
         public string FirstName
         {
-            get {  return firstName; }
+            get { return firstName; }
             set
             {
                 firstName = value;

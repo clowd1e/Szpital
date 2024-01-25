@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using Szpital.Models;
 
-namespace Szpital.ViewModels
+namespace Szpital.ViewModels.Manager
 {
     // ManagerDoctorsListItemViewModel
     public class MDListItemViewModel : ViewModelBase

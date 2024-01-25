@@ -8,6 +8,10 @@ using Szpital.Commands;
 using Szpital.DbContexts;
 using Szpital.Models;
 using Szpital.Stores;
+using Szpital.ViewModels.Doctor;
+using Szpital.ViewModels.GeneralManager;
+using Szpital.ViewModels.Manager;
+using Szpital.ViewModels.Receptionist;
 using Szpital.Views.Receptionist;
 
 namespace Szpital.ViewModels
@@ -19,15 +23,6 @@ namespace Szpital.ViewModels
         private readonly Employee currentUserEmployee;
         public ViewModelBase CurrentViewModel => navigationStore.CurrentViewModel;
         public ViewModelBase CurrentMenuViewModel => navigationStore.CurrentMenuViewModel;
-
-
-        // Commands
-        //public ICommand ChangeToHome { get; }
-        //public ICommand ChangeToVisits { get; }
-        //public ICommand ChangeToUserInfo { get; }
-        //public ICommand ChangeToAddPatient { get; }
-        //public ICommand ChangeToDoctors { get; }
-        //public ICommand Logout { get; }
 
         private bool isDarkLayerShown = false;
         public bool IsDarkLayerShown
@@ -57,24 +52,13 @@ namespace Szpital.ViewModels
                     break;
                 case "Doktor":
                     navigationStore.CurrentMenuViewModel = new DoctorMenuViewModel(navigationStore, this, currentUserAccount, currentUserEmployee);
-                    //ChangeToHome = new NavigateCommand(navigationStore, new DoctorHomeViewModel());
-                    //ChangeToUserInfo = new NavigateCommand(navigationStore, new DoctorUserInfoViewModel());
-                    //ChangeToVisits = new NavigateCommand(navigationStore, new DoctorVisitsViewModel());
                     break;
                 case "Recepcjonista":
                     navigationStore.CurrentMenuViewModel = new ReceptionistMenuViewModel(navigationStore, this, currentUserAccount, currentUserEmployee);
-                    //navigationStore.CurrentViewModel = new ReceptionistHomeViewModel();
-                    //ChangeToHome = new NavigateCommand(navigationStore, new ReceptionistHomeViewModel());
-                    //ChangeToUserInfo = new NavigateCommand(navigationStore, new ReceptionistUserInfoViewModel());
-                    //ChangeToVisits = new NavigateCommand(navigationStore, new ReceptionistVisitsViewModel());
-                    //ChangeToAddPatient = new NavigateCommand(navigationStore, new ReceptionistAddPatientViewModel());
-                    //ChangeToDoctors = new NavigateCommand(navigationStore, new ReceptionistDoctorsViewModel());
                     break;
             }
 
             navigationStore.CurrentMenuViewModelChanged += OnCurrentMenuViewModelChanged;
-
-            //Logout = new LogoutCommand();
         }
 
         private void OnCurrentMenuViewModelChanged()

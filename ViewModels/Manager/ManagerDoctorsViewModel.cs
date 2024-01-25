@@ -6,7 +6,7 @@ using Szpital.DbContexts;
 using Szpital.Models;
 using Szpital.Stores;
 
-namespace Szpital.ViewModels
+namespace Szpital.ViewModels.Manager
 {
     public class ManagerDoctorsViewModel : ViewModelBase
     {
@@ -19,13 +19,6 @@ namespace Szpital.ViewModels
         public ManagerDoctorsViewModel(NavigationStore navigationStore, MainViewModel mainViewModel, Employee employee)
         {
             doctors = DbContext.GetManagerDoctors(employee);
-            //ShowInfo = new ShowDoctorsInfoCommand(navigationStore, mainViewModel, this, employee);
-            //ShowInfo = new RelayCommand(execute => ShowDoctorInfo);
-        }
-
-        private void ShowDoctorInfo(object s)
-        {
-            throw new NotImplementedException();
         }
     }
 }

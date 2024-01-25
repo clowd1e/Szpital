@@ -13,7 +13,7 @@ namespace Szpital.ViewModels
     public class LoginWindowViewModel : ViewModelBase
     {
 
-        private string username = "edwfabian"; // TODO: delete singed value after testing
+        private string username;
         public string Username
         {
             get { return username; }
@@ -24,7 +24,7 @@ namespace Szpital.ViewModels
             }
         }
 
-        private string password = "eanv7jYM"; // TODO: delete singed value after testing
+        private string password;
         public string Password
         {
             get { return password; }

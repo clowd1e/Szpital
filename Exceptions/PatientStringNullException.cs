@@ -11,7 +11,7 @@ namespace Szpital.Exceptions
     {
         public override string Message { get; }
         public string ParamName { get; }
-        public PatientStringNullException(string paramName)
+        public PatientStringNullException(string paramName) : base()
         {
             Message = "Pole nie może być puste.";
             ParamName = paramName;

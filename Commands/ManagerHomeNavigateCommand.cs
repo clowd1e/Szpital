@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Szpital.Stores;
 using Szpital.ViewModels;
+using Szpital.ViewModels.Manager;
 
 namespace Szpital.Commands
 {

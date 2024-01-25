@@ -3,7 +3,7 @@ using Szpital.DbContexts;
 using Szpital.Models;
 using Szpital.Stores;
 
-namespace Szpital.ViewModels
+namespace Szpital.ViewModels.GeneralManager
 {
     public class GeneralManagerEmployeesViewModel : ViewModelBase
     {

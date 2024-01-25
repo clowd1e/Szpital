@@ -7,7 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Szpital.Exceptions;
 using Szpital.Models;
-using Szpital.ViewModels;
+using Szpital.ViewModels.GeneralManager;
+using Szpital.ViewModels.Manager;
 
 namespace Szpital.DbContexts
 {

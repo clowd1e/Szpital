@@ -3,7 +3,7 @@ using Szpital.Commands;
 using Szpital.Models;
 using Szpital.Stores;
 
-namespace Szpital.ViewModels
+namespace Szpital.ViewModels.GeneralManager
 {
     public class GeneralManagerHomeViewModel : ViewModelBase
     {

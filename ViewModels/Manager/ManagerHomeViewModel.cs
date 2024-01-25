@@ -3,7 +3,7 @@ using Szpital.Commands;
 using Szpital.Models;
 using Szpital.Stores;
 
-namespace Szpital.ViewModels
+namespace Szpital.ViewModels.Manager
 {
     public class ManagerHomeViewModel : ViewModelBase
     {
@@ -16,7 +16,7 @@ namespace Szpital.ViewModels
         private bool isMale => employee.Pesel[9] % 2 != 0;
         public string WelcomeText => $"Dzień dobry Pani{(isMale ? "e" : "")} Kierowni{(isMale ? "ku" : "czko")}!";
 
-        public ICommand ChangeToDoctors{ get; }
+        public ICommand ChangeToDoctors { get; }
         public ICommand ChangeToUserInfo { get; }
 
         public ManagerHomeViewModel(NavigationStore navigationStore, MainViewModel mainViewModel, ManagerMenuViewModel managerMenuViewModel, Employee employee, Account account)

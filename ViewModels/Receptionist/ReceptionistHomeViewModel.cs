@@ -8,7 +8,7 @@ using Szpital.Commands;
 using Szpital.Models;
 using Szpital.Stores;
 
-namespace Szpital.ViewModels
+namespace Szpital.ViewModels.Receptionist
 {
     public class ReceptionistHomeViewModel : ViewModelBase
     {

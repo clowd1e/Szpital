@@ -4,7 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Szpital" xmlns:views="clr-namespace:Szpital.Views"
-        xmlns:fa="http://schemas.fontawesome.io/icons/" xmlns:viewmodels="clr-namespace:Szpital.ViewModels"
+        xmlns:fa="http://schemas.fontawesome.io/icons/" 
+        xmlns:viewmodels="clr-namespace:Szpital.ViewModels"
+        xmlns:viewmodelsDoctor="clr-namespace:Szpital.ViewModels.Doctor"
+        xmlns:viewmodelsReceptionist="clr-namespace:Szpital.ViewModels.Receptionist"
+        xmlns:viewmodelsGenManager="clr-namespace:Szpital.ViewModels.GeneralManager"
+        xmlns:viewmodelsManager="clr-namespace:Szpital.ViewModels.Manager"
         xmlns:viewsDoctors="clr-namespace:Szpital.Views.Doctor"
         xmlns:viewsReceptionists="clr-namespace:Szpital.Views.Receptionist"
         xmlns:viewsGeneralManagers="clr-namespace:Szpital.Views.GeneralManager"
@@ -101,24 +106,22 @@
 
                     <Grid>
                         <Grid.Resources>
-                            <DataTemplate DataType="{x:Type viewmodels:DoctorMenuViewModel}">
+                            <DataTemplate DataType="{x:Type viewmodelsDoctor:DoctorMenuViewModel}">
                                 <viewsDoctors:DoctorMenuView></viewsDoctors:DoctorMenuView>
                             </DataTemplate>
-                            <DataTemplate DataType="{x:Type viewmodels:ReceptionistMenuViewModel}">
+                            <DataTemplate DataType="{x:Type viewmodelsReceptionist:ReceptionistMenuViewModel}">
                                 <viewsReceptionists:ReceptionistMenuView></viewsReceptionists:ReceptionistMenuView>
                             </DataTemplate>
-                            <DataTemplate DataType="{x:Type viewmodels:GeneralManagerMenuViewModel}">
+                            <DataTemplate DataType="{x:Type viewmodelsGenManager:GeneralManagerMenuViewModel}">
                                 <viewsGeneralManagers:GeneralManagerMenuView></viewsGeneralManagers:GeneralManagerMenuView>
                             </DataTemplate>
-                            <DataTemplate DataType="{x:Type viewmodels:ManagerMenuViewModel}">
+                            <DataTemplate DataType="{x:Type viewmodelsManager:ManagerMenuViewModel}">
                                 <viewsManagers:ManagerMenuView></viewsManagers:ManagerMenuView>
                             </DataTemplate>
                         </Grid.Resources>
 
                         <ContentControl Content="{Binding CurrentMenuViewModel}" />
                     </Grid>
-
-                    <!--<views1:DoctorMenuView></views1:DoctorMenuView>-->
                 </Border>
 
                 <Border CornerRadius="0 0 10 0"
@@ -136,43 +139,37 @@
                             </DataTemplate>
 
 
-                            <DataTemplate DataType="{x:Type viewmodels:DoctorHomeViewModel}">
+                            <DataTemplate DataType="{x:Type viewmodelsDoctor:DoctorHomeViewModel}">
                                 <viewsDoctors:DoctorHomeView></viewsDoctors:DoctorHomeView>
                             </DataTemplate>
-                            <DataTemplate DataType="{x:Type viewmodels:DoctorVisitsViewModel}">
+                            <DataTemplate DataType="{x:Type viewmodelsDoctor:DoctorVisitsViewModel}">
                                 <viewsDoctors:DoctorVisitsView></viewsDoctors:DoctorVisitsView>
                             </DataTemplate>
-                            <!--<DataTemplate DataType="{x:Type viewmodels:DoctorUserInfoViewModel}">
-                                <viewsDoctors:DoctorUserInfoView></viewsDoctors:DoctorUserInfoView>
-                            </DataTemplate>-->
 
-                            <DataTemplate DataType="{x:Type viewmodels:ReceptionistHomeViewModel}">
+                            <DataTemplate DataType="{x:Type viewmodelsReceptionist:ReceptionistHomeViewModel}">
                                 <viewsReceptionists:ReceptionistHomeView></viewsReceptionists:ReceptionistHomeView>
                             </DataTemplate>
-                            <DataTemplate DataType="{x:Type viewmodels:ReceptionistVisitsViewModel}">
+                            <DataTemplate DataType="{x:Type viewmodelsReceptionist:ReceptionistVisitsViewModel}">
                                 <viewsReceptionists:ReceptionistVisitsView></viewsReceptionists:ReceptionistVisitsView>
                             </DataTemplate>
-                            <DataTemplate DataType="{x:Type viewmodels:ReceptionistDoctorsViewModel}">
+                            <DataTemplate DataType="{x:Type viewmodelsReceptionist:ReceptionistDoctorsViewModel}">
                                 <viewsReceptionists:ReceptionistDoctorsView></viewsReceptionists:ReceptionistDoctorsView>
                             </DataTemplate>
-                            <DataTemplate DataType="{x:Type viewmodels:ReceptionistAddPatientViewModel}">
+                            <DataTemplate DataType="{x:Type viewmodelsReceptionist:ReceptionistAddPatientViewModel}">
                                 <viewsReceptionists:ReceptionistAddPatientView></viewsReceptionists:ReceptionistAddPatientView>
                             </DataTemplate>
-                            <!--<DataTemplate DataType="{x:Type viewmodels:ReceptionistUserInfoViewModel}">
-                                <viewsReceptionists:ReceptionistUserInfoView></viewsReceptionists:ReceptionistUserInfoView>
-                            </DataTemplate>-->
 
-                            <DataTemplate DataType="{x:Type viewmodels:GeneralManagerHomeViewModel}">
+                            <DataTemplate DataType="{x:Type viewmodelsGenManager:GeneralManagerHomeViewModel}">
                                 <viewsGeneralManagers:GeneralManagerHomeView></viewsGeneralManagers:GeneralManagerHomeView>
                             </DataTemplate>
-                            <DataTemplate DataType="{x:Type viewmodels:GeneralManagerEmployeesViewModel}">
+                            <DataTemplate DataType="{x:Type viewmodelsGenManager:GeneralManagerEmployeesViewModel}">
                                 <viewsGeneralManagers:GeneralManagerEmployeesView></viewsGeneralManagers:GeneralManagerEmployeesView>
                             </DataTemplate>
 
-                            <DataTemplate DataType="{x:Type viewmodels:ManagerHomeViewModel}">
+                            <DataTemplate DataType="{x:Type viewmodelsManager:ManagerHomeViewModel}">
                                 <viewsManagers:ManagerHomeView></viewsManagers:ManagerHomeView>
                             </DataTemplate>
-                            <DataTemplate DataType="{x:Type viewmodels:ManagerDoctorsViewModel}">
+                            <DataTemplate DataType="{x:Type viewmodelsManager:ManagerDoctorsViewModel}">
                                 <viewsManagers:ManagerDoctorsView></viewsManagers:ManagerDoctorsView>
                             </DataTemplate>
 

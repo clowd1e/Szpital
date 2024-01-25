@@ -8,13 +8,11 @@ using Szpital.Commands;
 using Szpital.Models;
 using Szpital.Stores;
 
-namespace Szpital.ViewModels
+namespace Szpital.ViewModels.Receptionist
 {
     public class ReceptionistMenuViewModel : ViewModelBase
     {
         private readonly NavigationStore navigationStore;
-        private readonly Account currentUserAccount;
-        private readonly Employee currentUserEmployee;
         public ViewModelBase CurrentViewModel => navigationStore.CurrentViewModel;
 
         private readonly MainViewModel mainViewModel;
@@ -85,7 +83,6 @@ namespace Szpital.ViewModels
             this.mainViewModel = mainViewModel;
 
             ChangeToHome = new NavigateCommand(navigationStore, new ReceptionistHomeViewModel(navigationStore, mainViewModel, this, employee, account));
-            //ChangeToUserInfo = new NavigateCommand(navigationStore, new ReceptionistUserInfoViewModel(employee));
             ChangeToUserInfo = new NavigateCommand(navigationStore, new UserInfoViewModel(navigationStore, mainViewModel, employee, account));
             ChangeToVisits = new NavigateCommand(navigationStore, new ReceptionistVisitsViewModel());
             ChangeToAddPatient = new NavigateCommand(navigationStore, new ReceptionistAddPatientViewModel(mainViewModel));
@@ -93,9 +90,6 @@ namespace Szpital.ViewModels
             Logout = new LogoutCommand();
 
             navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
-
-            currentUserAccount = account;
-            currentUserEmployee = employee;
         }
 
         private void OnCurrentViewModelChanged()

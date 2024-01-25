@@ -8,13 +8,11 @@ using Szpital.Commands;
 using Szpital.Models;
 using Szpital.Stores;
 
-namespace Szpital.ViewModels
+namespace Szpital.ViewModels.Doctor
 {
-    public class GeneralManagerMenuViewModel : ViewModelBase
+    public class DoctorMenuViewModel : ViewModelBase
     {
         private readonly NavigationStore navigationStore;
-        private readonly Account currentUserAccount;
-        private readonly Employee currentUserEmployee;
         public ViewModelBase CurrentViewModel => navigationStore.CurrentViewModel;
 
         private readonly MainViewModel mainViewModel;
@@ -29,14 +27,14 @@ namespace Szpital.ViewModels
                 OnPropertyChanged(nameof(HomeChecked));
             }
         }
-        private bool employeesChecked;
-        public bool EmployeesChecked
+        private bool visitsChecked;
+        public bool VisitsChecked
         {
-            get { return employeesChecked; }
+            get { return visitsChecked; }
             set
             {
-                employeesChecked = value;
-                OnPropertyChanged(nameof(employeesChecked));
+                visitsChecked = value;
+                OnPropertyChanged(nameof(VisitsChecked));
             }
         }
         private bool userInfoChecked;
@@ -51,27 +49,24 @@ namespace Szpital.ViewModels
         }
 
         public ICommand ChangeToHome { get; }
-        public ICommand ChangeToEmployees { get; }
+        public ICommand ChangeToVisits { get; }
         public ICommand ChangeToUserInfo { get; }
         public ICommand Logout { get; }
 
-        public GeneralManagerMenuViewModel(NavigationStore navigationStore, MainViewModel mainViewModel, Account account, Employee employee)
+
+        public DoctorMenuViewModel(NavigationStore navigationStore, MainViewModel mainViewModel, Account account, Employee employee)
         {
             HomeChecked = true;
             this.navigationStore = navigationStore;
-            this.navigationStore.CurrentViewModel = new GeneralManagerHomeViewModel(navigationStore, mainViewModel, this, employee, account);
+            this.navigationStore.CurrentViewModel = new DoctorHomeViewModel(navigationStore, mainViewModel, this, employee, account);
             this.mainViewModel = mainViewModel;
 
-            ChangeToHome = new NavigateCommand(navigationStore, new GeneralManagerHomeViewModel(navigationStore, mainViewModel, this, employee, account));
-            //ChangeToUserInfo = new NavigateCommand(navigationStore, new DoctorUserInfoViewModel(employee));
+            ChangeToHome = new NavigateCommand(navigationStore, new DoctorHomeViewModel(navigationStore, mainViewModel, this, employee, account));
             ChangeToUserInfo = new NavigateCommand(navigationStore, new UserInfoViewModel(navigationStore, mainViewModel, employee, account));
-            ChangeToEmployees = new NavigateCommand(navigationStore, new GeneralManagerEmployeesViewModel(navigationStore, mainViewModel, employee));
+            ChangeToVisits = new NavigateCommand(navigationStore, new DoctorVisitsViewModel());
             Logout = new LogoutCommand();
 
             navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
-
-            currentUserAccount = account;
-            currentUserEmployee = employee;
         }
 
         private void OnCurrentViewModelChanged()

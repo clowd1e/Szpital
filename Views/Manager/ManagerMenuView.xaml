@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Szpital.Views.Manager" xmlns:fa="http://schemas.fontawesome.io/icons/" xmlns:viewmodels="clr-namespace:Szpital.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:ManagerMenuViewModel}"
+             xmlns:local="clr-namespace:Szpital.Views.Manager" xmlns:fa="http://schemas.fontawesome.io/icons/" xmlns:manager="clr-namespace:Szpital.ViewModels.Manager" d:DataContext="{d:DesignInstance Type=manager:ManagerMenuViewModel}"
              mc:Ignorable="d" d:DesignWidth="250">
     <Grid>
         <StackPanel Margin="0 25 0 0">

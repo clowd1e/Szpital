@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 using Szpital.DbContexts;
 using Szpital.Models;
 using Szpital.Stores;
+using Szpital.ViewModels.Manager;
 
-namespace Szpital.ViewModels
+namespace Szpital.ViewModels.Receptionist
 {
     public class ReceptionistDoctorsViewModel : ViewModelBase
     {
@@ -19,7 +20,6 @@ namespace Szpital.ViewModels
         public ReceptionistDoctorsViewModel(NavigationStore navigationStore, MainViewModel mainViewModel, Employee employee)
         {
             doctors = DbContext.GetAllDoctors();
-
         }
     }
 }
