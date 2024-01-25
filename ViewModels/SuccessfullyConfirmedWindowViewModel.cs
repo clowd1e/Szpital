@@ -11,11 +11,13 @@ namespace Szpital.ViewModels
 {
     public class SuccessfullyConfirmedWindowViewModel : ViewModelBase
     {
+        public string OperationText { get; }
         public ICommand Close { get; }
 
-        public SuccessfullyConfirmedWindowViewModel(MainViewModel mainViewModel, Window window, ChangePasswordCommand changePasswordCommand)
+        public SuccessfullyConfirmedWindowViewModel(MainViewModel mainViewModel, Window window, string operationText)
         {
             Close = new CancelCommand(mainViewModel, window);
+            OperationText = operationText;
         }
     }
 }

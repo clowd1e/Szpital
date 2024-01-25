@@ -34,7 +34,7 @@ namespace Szpital.ViewModels
 
             ChangeToVisits = new ReceptionistHomeNavigateCommand(navigationStore, nameof(ChangeToVisits), receptionistMenuViewModel, new ReceptionistVisitsViewModel());
             ChangeToDoctors = new ReceptionistHomeNavigateCommand(navigationStore, nameof(ChangeToDoctors), receptionistMenuViewModel, new ReceptionistDoctorsViewModel(navigationStore, mainViewModel, employee));
-            ChangeToAddPatient = new ReceptionistHomeNavigateCommand(navigationStore, nameof(ChangeToAddPatient), receptionistMenuViewModel, new ReceptionistAddPatientViewModel());
+            ChangeToAddPatient = new ReceptionistHomeNavigateCommand(navigationStore, nameof(ChangeToAddPatient), receptionistMenuViewModel, new ReceptionistAddPatientViewModel(mainViewModel));
             ChangeToUserInfo = new ReceptionistHomeNavigateCommand(navigationStore, nameof(ChangeToUserInfo), receptionistMenuViewModel, new UserInfoViewModel(navigationStore, mainViewModel, employee, account));
 
             navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;

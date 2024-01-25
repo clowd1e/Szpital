@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Szpital.Views"
+        xmlns:local="clr-namespace:Szpital.Views" xmlns:viewmodels="clr-namespace:Szpital.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:SuccessfullyConfirmedWindowViewModel}"
         mc:Ignorable="d"
         Title="SuccessfullyConfirmedWindowView" Height="300" Width="500"
         AllowsTransparency="True"
@@ -20,7 +20,7 @@
         </Border.Background>
 
         <StackPanel VerticalAlignment="Center">
-            <TextBlock Margin="0" HorizontalAlignment="Center" TextAlignment="Center" FontSize="30" Width="400" Text="Hasło zostało zmienione" Style="{StaticResource HomeWelcomeTextBlock}"/>
+            <TextBlock Margin="0" HorizontalAlignment="Center" TextAlignment="Center" FontSize="30" Width="400" Text="{Binding OperationText}" Style="{StaticResource HomeWelcomeTextBlock}"/>
             <StackPanel Margin="0 50 0 0" Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button
                         Content="Ok"

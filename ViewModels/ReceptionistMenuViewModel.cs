@@ -88,7 +88,7 @@ namespace Szpital.ViewModels
             //ChangeToUserInfo = new NavigateCommand(navigationStore, new ReceptionistUserInfoViewModel(employee));
             ChangeToUserInfo = new NavigateCommand(navigationStore, new UserInfoViewModel(navigationStore, mainViewModel, employee, account));
             ChangeToVisits = new NavigateCommand(navigationStore, new ReceptionistVisitsViewModel());
-            ChangeToAddPatient = new NavigateCommand(navigationStore, new ReceptionistAddPatientViewModel());
+            ChangeToAddPatient = new NavigateCommand(navigationStore, new ReceptionistAddPatientViewModel(mainViewModel));
             ChangeToDoctors = new NavigateCommand(navigationStore, new ReceptionistDoctorsViewModel(navigationStore, mainViewModel, employee));
             Logout = new LogoutCommand();
 

@@ -82,7 +82,7 @@ namespace Szpital.Commands
             DbContext.ChangePassword(account, changePasswordViewModel.NewPassword);
 
             SuccessfullyConfirmedWindowView successfullyConfirmedWindowView = new SuccessfullyConfirmedWindowView();
-            successfullyConfirmedWindowView.DataContext = new SuccessfullyConfirmedWindowViewModel(mainViewModel, successfullyConfirmedWindowView, this);
+            successfullyConfirmedWindowView.DataContext = new SuccessfullyConfirmedWindowViewModel(mainViewModel, successfullyConfirmedWindowView, "Hasło zostało zmienione");
 
             successfullyConfirmedWindowView.ShowDialog();
         }

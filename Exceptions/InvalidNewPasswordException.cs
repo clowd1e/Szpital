@@ -9,19 +9,7 @@ namespace Szpital.Exceptions
 {
     public class InvalidNewPasswordException : Exception
     {
-        public InvalidNewPasswordException()
-        {
-        }
-
         public InvalidNewPasswordException(string? message) : base(message)
-        {
-        }
-
-        public InvalidNewPasswordException(string? message, Exception? innerException) : base(message, innerException)
-        {
-        }
-
-        protected InvalidNewPasswordException(SerializationInfo info, StreamingContext context) : base(info, context)
         {
         }
     }

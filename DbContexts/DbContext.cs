@@ -233,41 +233,39 @@ namespace Szpital.DbContexts
             return result;
         }
 
+        public static void AddPatient(string firstName, string lastName, string pesel, DateTime birthDate, string city, string address, string phoneNumber)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionStr))
+            {
+                connection.Open();
+                string insertPatientQuery = $@"insert into Patients values('{firstName}', '{lastName}', '{pesel}', '{birthDate.Year}-{birthDate.Month}-{birthDate.Day}', '{city}', '{address}', '{phoneNumber}')";
 
-        //public DbContext()
-        //{
-        //using (SqlConnection connection = new SqlConnection(connectionStr))
-        //{
-        //    connection.Open();
+                using (SqlCommand insertPatientCommand = new SqlCommand(insertPatientQuery, connection))
+                {
+                    insertPatientCommand.ExecuteNonQuery();
+                }
+            }
+        }
+        
+        public static List<string> GetAllPesels()
+        {
+            List<string> pesels = new List<string>();
+            using (SqlConnection connection = new SqlConnection(connectionStr))
+            {
+                connection.Open();
+                string selectAllPeselsQuery = $@"select Pesel from Patients union all select Pesel from Employees";
 
-        //    using (SqlCommand selectLoginsCommand = new SqlCommand(selectLoginsQuery, connection))
-        //    using (SqlDataReader reader = selectLoginsCommand.ExecuteReader())
-        //    {
-        //        while (reader.Read())
-        //        {
-        //            Login login = new Login(
-        //                (int)reader["id"],
-        //                (int)reader["id_doktora"],
-        //                reader["uzytkownik"].ToString(),
-        //                reader["haslo"].ToString(),
-        //                reader["typ"].ToString()
-        //                );
-        //            logins.Add(login);
-        //        }
-        //    }
-        //}
-        //}
+                using (SqlCommand selectAllPeselsCommand = new SqlCommand(selectAllPeselsQuery, connection))
+                using (SqlDataReader reader = selectAllPeselsCommand.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        pesels.Add(reader["Pesel"].ToString());
+                    }
+                }
+            }
 
-        //public Login IdentifyUser(string username, string password)
-        //{
-        //    for (int i = 0; i < logins.Count; i++)
-        //    {
-        //        if (logins[i].LoginName == username && logins[i].Password == password)
-        //        {
-        //            return logins[i];
-        //        }
-        //    }
-        //    throw new UserIdentifyException("Nie poprawne hasło lub użytkownik.");
-        //}
+            return pesels;
+        }
     }
 }

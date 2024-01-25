@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Szpital.Exceptions
 {
-    public class UserIdentifyException : Exception
+    public class PeselException : Exception
     {
-        public UserIdentifyException(string? message) : base(message)
+        public PeselException(string? message) : base(message)
         {
         }
     }

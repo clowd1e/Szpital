@@ -19,5 +19,11 @@ namespace Szpital.ViewModels
             Cancel = new CancelCommand(mainViewModel, window);
             Confirm = new ConfirmCommand(window, changePasswordCommand);
         }
+
+        public ConfirmWindowViewModel(MainViewModel mainViewModel, Window window, AddPatientCommand addPatientCommand)
+        {
+            Cancel = new CancelCommand(mainViewModel, window);
+            Confirm = new ConfirmCommand(window, addPatientCommand);
+        }
     }
 }
