@@ -28,55 +28,55 @@
 
                     <StackPanel VerticalAlignment="Top" Margin="50 20 50 0" Grid.Row="0">
                         <TextBlock Text="Wpisz imię:" Style="{StaticResource PatTextBlock}"/>
-                        <TextBox Text="{Binding FirstName}" Style="{StaticResource PatTextBox}"/>
+                        <TextBox Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource PatTextBox}"/>
                         <TextBlock Visibility="{Binding HasFirstNameErrorMessage, Converter={StaticResource BooleanToVisibilityConverter}}"
                                Text="{Binding FirstNameErrorMessage}"
                                Style="{StaticResource PatErrorMessage}" />
                     </StackPanel>
                     <StackPanel VerticalAlignment="Top" Margin="50 0 50 0" Grid.Row="1">
                         <TextBlock Text="Wpisz nazwisko:" Style="{StaticResource PatTextBlock}"/>
-                        <TextBox Text="{Binding LastName}" Style="{StaticResource PatTextBox}"/>
+                        <TextBox Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource PatTextBox}"/>
                         <TextBlock Visibility="{Binding HasLastNameErrorMessage, Converter={StaticResource BooleanToVisibilityConverter}}"
                                Text="{Binding LastNameErrorMessage}"
                                Style="{StaticResource PatErrorMessage}" />
                     </StackPanel>
                     <StackPanel VerticalAlignment="Top" Margin="50 0 50 0" Grid.Row="2">
                         <TextBlock Text="Wpisz pesel:" Style="{StaticResource PatTextBlock}"/>
-                        <TextBox Text="{Binding Pesel}" Style="{StaticResource PatTextBox}"/>
+                        <TextBox Text="{Binding Pesel, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource PatTextBox}"/>
                         <TextBlock Visibility="{Binding HasPeselErrorMessage, Converter={StaticResource BooleanToVisibilityConverter}}"
                                Text="{Binding PeselErrorMessage}"
                                Style="{StaticResource PatErrorMessage}" />
                     </StackPanel>
                     <StackPanel VerticalAlignment="Top" Margin="50 0 50 0" Grid.Row="3">
                         <TextBlock Text="Wybierz datę urodzenia:" Style="{StaticResource PatTextBlock}"/>
-                        <DatePicker SelectedDate="{Binding BirthDate}" />
+                        <DatePicker SelectedDate="{Binding BirthDate, UpdateSourceTrigger=PropertyChanged}" />
                         <TextBlock Visibility="{Binding HasBirthDateErrorMessage, Converter={StaticResource BooleanToVisibilityConverter}}"
                                Text="{Binding BirthDateErrorMessage}"
                                Style="{StaticResource PatErrorMessage}" />
                     </StackPanel>
                     <StackPanel VerticalAlignment="Top" Margin="50 0 50 0" Grid.Row="4">
                         <TextBlock Text="Wpisz miejscowość:" Style="{StaticResource PatTextBlock}"/>
-                        <TextBox Text="{Binding City}" Style="{StaticResource PatTextBox}"/>
+                        <TextBox Text="{Binding City, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource PatTextBox}"/>
                         <TextBlock Visibility="{Binding HasCityErrorMessage, Converter={StaticResource BooleanToVisibilityConverter}}"
                                Text="{Binding CityErrorMessage}"
                                Style="{StaticResource PatErrorMessage}" />
                     </StackPanel>
                     <StackPanel VerticalAlignment="Top" Margin="50 0 50 0" Grid.Row="5">
                         <TextBlock Text="Wpisz adres:" Style="{StaticResource PatTextBlock}"/>
-                        <TextBox Text="{Binding Address}" Style="{StaticResource PatTextBox}"/>
+                        <TextBox Text="{Binding Address, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource PatTextBox}"/>
                         <TextBlock Visibility="{Binding HasAddressErrorMessage, Converter={StaticResource BooleanToVisibilityConverter}}"
                                Text="{Binding AddressErrorMessage}"
                                Style="{StaticResource PatErrorMessage}" />
                     </StackPanel>
                     <StackPanel VerticalAlignment="Top" Margin="50 0 50 0" Grid.Row="6">
                         <TextBlock Text="Wpisz numer telefonu:" Style="{StaticResource PatTextBlock}"/>
-                        <TextBox Text="{Binding PhoneNumber}" Style="{StaticResource PatTextBox}"/>
+                        <TextBox Text="{Binding PhoneNumber, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource PatTextBox}"/>
                         <TextBlock Visibility="{Binding HasPhoneNumberErrorMessage, Converter={StaticResource BooleanToVisibilityConverter}}"
                                Text="{Binding PhoneNumberErrorMessage}"
                                Style="{StaticResource PatErrorMessage}" />
                     </StackPanel>
                     <StackPanel VerticalAlignment="Center" Margin="50 0 50 0" Grid.Row="7">
-                        <Button Command="{Binding AddPatient}" Content="Dodaj pacjenta" Width="200" Height="50" FontSize="20" Style="{StaticResource BlueButton}"/>
+                        <Button Command="{Binding AddPatient, UpdateSourceTrigger=PropertyChanged}" Content="Dodaj pacjenta" Width="200" Height="50" FontSize="20" Style="{StaticResource BlueButton}"/>
                     </StackPanel>
                 </Grid>
             </Border>
