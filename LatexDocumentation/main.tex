@@ -1,0 +1,76 @@
+\documentclass[polish,12pt]{article} 
+\usepackage{times}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[a4paper,twoside,left=2.0cm,right=1.5cm,top=1.5cm,bottom=1.5cm]{geometry}
+\usepackage{indentfirst}%wciecia a nowych akapitach
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage[hidelinks]{hyperref}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{subfigure}
+\usepackage{float}
+
+\usepackage[section]{placeins}
+
+\usepackage{setspace}
+
+
+%definicja przydatnych poleceń
+\newcommand{\kierunek}{Kierunek: INFORMATYKA}
+\newcommand{\specjalnosc}{Specjalność: Programowanie}
+\newcommand{\autor}{Oleksandr Lobchenko}
+\newcommand{\album}{w68317}
+\newcommand{\temat}{APLIKACJA DESKTOPOWA "SZPITAL+"}
+%\newcommand{\typpracy}{PRACA DYPLOMOWA INŻYNIERSKA}
+\newcommand{\miasto}{Rzeszów}
+\newcommand{\rok}{2024}
+
+\usepackage{tocloft} % dla zmiany spisu treści
+\renewcommand{\contentsname}{\HUGE}
+\renewcommand\cftsecfont{\LARGE\textbf}
+\renewcommand\cftsubsecpagefont{\large}
+
+\begin{document}
+
+
+% *************** Strona tytułowa ***************
+\input{front.tex}
+
+% *************** Wstęp ***************
+\input{wstep.tex}
+
+% *************** Cele ***************
+\input{cele.tex}
+
+% *************** Wymagania ***************
+\input{wymagania.tex}
+
+% *************** Struktura projektu ***************
+\input{struk_proj.tex}
+
+% *************** Opis techniczny ***************
+\input{opis_tech.tex}
+
+% *************** Harmonogram realizacji projektu ***************
+\input{harmonogram.tex}
+
+% *************** Repozytorium ***************
+\input{repozytorium.tex}
+
+% *************** Prezentacja ***************
+\input{prezentacja.tex}
+
+% *************** Podsumowanie ***************
+\input{podsumowanie.tex}
+
+% *************** Literatura ***************
+\input{literatura.tex}
+
+\newpage
+%spis rysunków
+\addcontentsline{toc}{chapter}{Spis rysunków}
+\listoffigures
+\newpage
+
+\end{document}

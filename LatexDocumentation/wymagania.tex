@@ -1,0 +1,172 @@
+\begin{flushleft}
+\section{\LARGE{Wymagania funkcjonalne}}
+\end{flushleft}
+
+\begin{flushleft}
+    \subsection{\large{Ogólne funkcjonalności pracowników\label{subsec:gl_kier}}}
+    \begin{itemize}
+        \item{Przegląd informacji o siebie (sekcja ~\ref{subsec:przeg_inf})}
+        \item{Wylogowanie się}
+    \end{itemize}
+\end{flushleft}
+
+%\renewcommand{\labelitemi}{\textsc{-}}
+\begin{flushleft}
+    \subsection{\large{Klient Głównego Kierownika\label{subsec:gl_kier}}}
+    \begin{itemize}
+        \item{Wyświetlenie listy pracowników (sekcja ~\ref{subsec:wyst_prac})}
+    \end{itemize}
+\end{flushleft}
+
+\begin{flushleft}
+    \subsection{\large{Klient Kierownika Działu\label{subsec:kier}}}
+    \begin{itemize}
+        \item{Wyświetlenie listy lekarzy (sekcja ~\ref{subsec:wyst_lekrz})}
+    \end{itemize}
+\end{flushleft}
+
+\begin{flushleft}
+    \subsection{\large{Klient Recepcjonisty\label{subsec:recep}}}
+    \begin{itemize}
+        \item{Wyświetlenie listy lekarzy (sekcja ~\ref{subsec:wyst_lekrz})}
+        \item{Funkcja dodawania pacjentów (sekcja ~\ref{subsec:dodn_pacjn})}
+        % \item{Przegląd harmonogramu pacjenta (sekcja ~\ref{subsec:wyst_harm_klnt})}
+        \item{Funkcja przeglądu wszystkich wizyt (sekcja ~\ref{subsec:przeg_wiz})}
+    \end{itemize}
+\end{flushleft}
+
+\begin{flushleft}
+    \subsection{\large{Klient Lekarza\label{subsec:lekarz}}}
+    \begin{itemize}
+        \item{Funkcja ustalenia swoich wizytów (sekcja ~\ref{subsec:ust_wiz})}
+        \item{Przegląd swojego harmonogramu (sekcja ~\ref{subsec:wyst_harm_lekrz})}
+        \item{Przegląd informacji o pacjencie (sekcja ~\ref{subsec:przeg_inf})}
+        \item{Przegląd ksiązek lekarskich pacjentów (sekcja ~\ref{subsec:przeg_ks_lekr})}
+    \end{itemize}
+\end{flushleft}
+
+\begin{flushleft}
+    \subsection{\Large{Opis funkcjonalności}}
+    \subsubsection{\large{Przegląd informacji}\label{subsec:przeg_inf}}
+    Wyświetla informacje:
+    \begin{itemize}
+        \item{Dla pracownika: id pracownika, imię, nazwisko, dział szpitalu, specjalność, pesel, adres zamieszkania, datę urodzenia, miejscowość, numer telefonu, datę zatrudnienia, wynagrodzenie, email.}
+        \item{Dla pacjenta: id pracjenta, imię, nazwisko, pesel, adres zamieszkania, datę urodzenia, miejscowość, numer telefonu}\label{item:info}
+    \end{itemize}
+\end{flushleft}
+
+\begin{flushleft}
+    \subsubsection{\large{Wyświetlenie listy pracowników}\label{subsec:wyst_prac}}
+    Pozwala głównemu kierownikowi wyświetlić listę pracowników. Lista zawiera następujące funkcje:
+    \begin{itemize}
+        \item Funkcja przęglądu informacji o pracowniku (sekcja ~\ref{subsec:przeg_inf})
+        \item Funkcja ustalenia pensji pracownika\label{item:pens_prac}
+        \item Funkcja zwolnienia pracownika (usuwa pracownika z bazy danych)
+        \item Funkcja dodawania nowego pracownika (sekcja ~\ref{subsec:dodn_prac})
+        \item Funkcja wyświetlania harmonogramu lekarza
+    \end{itemize}
+\end{flushleft}
+
+\begin{flushleft}
+    \subsubsection{\large{Wyświetlenie listy lekarzy }\label{subsec:wyst_lekrz}}
+    Pozwala kierownikowi wyświetlić listę lekarzy swojego działu. Lista zawiera następujące funkcje:
+    \begin{itemize}
+        \item Funkcja przęglądu informacji o lekarzu (sekcja ~\ref{subsec:przeg_inf})
+        \item Funkcja zwolnienia lekarza (usuwa lekarza z bazy danych)
+        \item Funkcja dodawania nowego lekarza (sekcja ~\ref{subsec:dodn_prac})
+        \item Funkcja wyświetlania harmonogramu lekarza (sekcja ~\ref{subsec:wyst_harm_lekrz})
+        \item Funkcja ustalenia pensji lekarza
+    \end{itemize}
+\end{flushleft}
+
+\begin{flushleft}
+    \subsubsection{\large{Wyświetlenie harmonogramu lekarzy }\label{subsec:wyst_harm_lekrz}}
+    Wyświetla tablicę z wizytami lekarza.\\
+    \hspace{5mm}Dla recepcjonisty funkcja pozwala na ustalenie wizytów (sekcja ~\ref{subsec:ust_wiz}), usunięcie wizytów (sekcja ~\ref{subsec:usun_wiz}), wyświetlenie informacji o pacjencie i o doktorze (sekcja ~\ref{subsec:przeg_inf}).\\
+    \hspace{5mm}Dla lekarza pozwala na wyżej wymienione funkcję dodatkowe dla recepcjonisty tylko dla siebie.
+\end{flushleft}
+
+\begin{flushleft}
+    \subsubsection{\large{Funkcja ustalenia wizyty }\label{subsec:ust_wiz}}
+    Pozwala na dodanie do tabeli bazy danych z planem wizytów nowych rekordów z informacjami: id wizyty, data i godzina wizyty, id lekarza, id pacjenta, numer gabinetu i notatki do wizyty.
+\end{flushleft}
+
+\begin{flushleft}
+    \subsubsection{\large{Funkcja usunięcia wizyty }\label{subsec:usun_wiz}}
+    Usuwa rekord(wizytę) z tabeli bazy danych z planem wizytów o wskazanym id.
+\end{flushleft}
+
+\begin{flushleft}
+    \subsubsection{\large{Funkcja dodawania pacjentów }\label{subsec:dodn_pacjn}}
+    Dodaje do tabeli bazy danych z pacjentami nowego pacjenta o informacjach wymienionych w sekcji ~\ref{subsec:przeg_inf} punkt ~\hyperref[item:info]{2}
+\end{flushleft}
+
+\begin{flushleft}
+    \subsubsection{\large{Funkcja przeglądu harmonogramu klienta}\label{subsec:wyst_harm_klnt}}
+    Wyświetla tablicę z wizytami pacjenta.
+\end{flushleft}
+
+\begin{flushleft}
+    \subsubsection{\large{Funkcja przeglądu ksiązek lekarskich}\label{subsec:przeg_ks_lekr}}
+    Wyświetla tablicę baz danych ksiązki lekarskiej pacjenta posortowanej po datach nonatek.\\
+    Dla lekarza dostępna funkcja dodawania notatek do ksiązki (sekcja ~\ref{subsec:dodn_notat_do_ks_lekr}).
+\end{flushleft}
+
+\begin{flushleft}
+    \subsubsection{\large{Funkcja dodawania notatek i recepty do książek lekarskich pacjentów}\label{subsec:dodn_notat_do_ks_lekr}}
+    Dodaje nowe notatki do tabeli bazy danych z notatkami wszystkich pacjentów.
+\end{flushleft}
+
+\begin{flushleft}
+    \subsubsection{\large{Funkcja przeglądu wszystkich wizyt}\label{subsec:przeg_wiz}}
+    Wyświetla tablicę czasową z wszystkimi wizytami. Wizyty przedstawione jako bloki. \\
+    Dla recepcjonisty dodaje funkcję usunięcia wizyty i dodawania wizyty (sekcja  ~\ref{subsec:usun_wiz} i ~\ref{subsec:ust_wiz}).
+\end{flushleft}
+
+\begin{flushleft}
+    \subsubsection{\large{Funkcja dodawania nowego pracownika}\label{subsec:dodn_prac}}
+    Dodaje pracowników do tabeli z pracownikami w bazie danych z informacją o pracowniku z sekcji ~\ref{subsec:przeg_inf}. Główny kierownik może dodawać: kierowników, recepcjonistów i lekarzy. Kierownicy mogą dodawać tylko lekarzy.
+\end{flushleft}
+
+
+\begin{flushleft}
+\subsection{\Large{Ograniczenia i zabronione operacje}}
+\end{flushleft}
+
+\begin{flushleft}
+    \subsubsection{\large{Wprowadzanie danych: }}
+    \renewcommand{\labelenumii}{\alph{enumii})}
+    \begin{enumerate}
+        \item{Dla finkcji ustalenia wizytów (sekcja ~\ref{subsec:ust_wiz}):
+        \begin{enumerate}
+            \item{Nie można wprowadzać id wizyty(generuje się automatycznie);}
+            \item{Data i godzina wizyty muszą być względnie z formatem "YYYY-MM-DD HH:MI:SS";}
+            \item{Id lekarza nie może być mniejsze od 1 i większe od liczby lekarzy;}
+            \item{Id pacjenta nie może być mniejsze od 1 i większe od liczby pacjentów;}
+            \item{Numer gabinetu nie może być mniejsze od 1 i większe od liczby gabinetów;}
+        \end{enumerate}}
+        \item{Dla funkcji dodawania pacjentów (sekcja ~\ref{subsec:dodn_pacjn}):\label{item:zabr_dodn_prac}
+        \begin{enumerate}
+            \item{Nie można wprowadzać id pacjenta(generuje się automatycznie);\label{item:zabr_dodn_prac_a}}
+            \item{Imię musi się składać z liter i nie być mniejsze od 2 i większe od 30 liter;}
+            \item{Nazwisko musi się składać z liter i nie być mniejsze od 2 i większe od 50 liter;}
+            \item{Data urodzenia musi być względnie z formatem "YYYY-MM-DD";}
+            \item{Numer pesel musi się skłądać z 11 cyfr;}
+            \item{Numer telefonu musi być względnie z formatem "+48 xxx xxx xxx";}
+            \item{Adres email musi być względnie z formatem "username@pracownik.szp.pl";}
+        \end{enumerate}}
+        \item{Dla funkcji ustalenia pensji pracowników (sekcja ~\ref{subsec:wyst_prac} punkt \hyperref[item:pens_prac]{2}):\\
+        \hspace{2.5mm}Pensja musi być liczbą rzeczywistą większą od 0.}
+        \item{Dla funkcji dodawania nowego pracownika (sekcja ~\ref{subsec:dodn_prac})
+        \begin{enumerate}
+            \item{Są te same ograniczenia jak dla funkcji dodawania pacjentów (sekcja ~\ref{item:zabr_dodn_prac})}
+            \item{Data zatrudnienia musi być względnie z formatem "YYYY-MM-DD";}
+        \end{enumerate}}
+        \item{Dla funkcji dodawania notatek i recepty do książek lekarskich pacjentów (sekcja ~\ref{subsec:dodn_notat_do_ks_lekr})
+        \begin{enumerate}
+            \item{Id pacjenta musi być większy od 0 i mniejszy od liczby pacjentów;}
+            \item{Id lekarza musi być większy od 0 i mniejszy od liczby pacjentów;}
+            \item{Data notatki musi być względnie z formatem "YYYY-MM-DD";}
+        \end{enumerate}}
+    \end{enumerate}
+\end{flushleft}
