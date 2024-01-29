@@ -1,0 +1,76 @@
+% **** Szablon pracy magisterskiej, licencjackiej lub inżynierskiej ****
+
+\documentclass[polish,12pt,twoside,a4paper]{report}
+
+\input{style.tex}
+
+%definicja przydatnych poleceń
+\newcommand{\wydzial}{KOLEGIUM INFORMATYKI STOSOWANEJ}
+\newcommand{\kierunek}{Kierunek: INFORMATYKA}
+\newcommand{\specjalnosc}{Specjalność: PROGRAMOWANIE}
+\newcommand{\autor}{Oleksandr Lobchenko}
+\newcommand{\album}{Nr albumu studenta w68317}
+\newcommand{\temat}{APLIKACJA DESKTOPOWA "SZPITAL+"}
+\newcommand{\prowadzacy}{mgr inż. Ewa Żesławska}
+\newcommand{\typpracy}{Praca projektowa programowanie obiektowe C\#}
+\newcommand{\miasto}{Rzeszów}
+\newcommand{\rok}{2024}
+
+\begin{document}
+
+% *************** Włączenie definicji pierwszych stron ***************
+\input{front.tex}
+
+
+% *************** Część główna pracy ***************
+\input{wstep.tex}
+\addcontentsline{toc}{chapter}{Wstęp}
+\newpage
+\input{R1.tex}
+\newpage
+\input{R2.tex}
+\newpage
+\input{R3.tex}
+\newpage
+\input{R4.tex}
+\newpage
+\input{R5.tex}
+\newpage
+
+% *************** Bibliografia ***************
+\begin{thebibliography}{6}
+\addcontentsline{toc}{chapter}{Bibliografia}
+%dodanie wpisu do spisu bibliograficznego
+
+\bibitem{www-1} https://youtu.be/fZxZswmC\_BY?si=gn6SI5tqut9n-vOM
+\bibitem{www-2} https://youtu.be/oSeYvMEH7jc?si=aWGmXG\_Enb7S\_z3j
+\bibitem{www-3} https://youtu.be/PzP8mw7JUzI?si=twPT-bTfhYE-FMau
+\bibitem{www-4}
+https://stackoverflow.com/questions/833943/watermark-hint-placeholder-text-in-textbox
+\bibitem{www-5}
+https://leanactionplan.pl/wykres-gantta/
+\bibitem{www-6}
+https://pl.wikipedia.org/wiki/Windows\_Presentation\_Foundation
+\bibitem{www-7}
+https://pl.wikipedia.org/wiki/.NET\_Framework
+\bibitem{www-8}
+https://pl.wikipedia.org/wiki/Extensible\_Application\_Markup\_Language
+\bibitem{www-9}
+https://en.wikipedia.org/wiki/Model\%E2\%80\%93view\%E2\%80\%93viewmodel
+\bibitem{www-10}
+https://stackoverflow.com/questions/58272836/display-datetime-in-textblock-with-dashed-underlined-textdecorations
+\bibitem{www-11}
+https://stackoverflow.com/questions/30231252/disable-main-window-wpf
+\bibitem{www-12}
+https://stackoverflow.com/questions/26258450/how-do-i-add-a-bullet-point-in-front-of-a-text-binding-in-wpf
+\bibitem{www-13} https://learn.microsoft.com/en-us/archive/msdn-magazine/2009/february/patterns-wpf-apps-with-the-model-view-viewmodel-design-pattern
+
+\bibitem{etykieta1}Rob Miles, {\it C\# Programming Yellow Book}, 2019.
+\end{thebibliography}
+\newpage
+
+% *************** Zakończenie ***************
+\input{back.tex}
+
+\end{document}
+% *************** Koniec pliku szablon.tex ***************
