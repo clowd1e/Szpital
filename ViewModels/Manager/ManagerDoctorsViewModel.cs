@@ -15,13 +15,14 @@ namespace Szpital.ViewModels.Manager
 
         public ObservableCollection<MDListItemViewModel> Doctors => doctors;
 
-        public ICommand ShowInfo { get; }
-
         public ManagerDoctorsViewModel(NavigationStore navigationStore, MainViewModel mainViewModel, Employee employee)
         {
             doctors = DbContext.GetManagerDoctors(employee);
 
-            ShowInfo = new ShowEmployeeInfoCommand(navigationStore, employee);
+            foreach (MDListItemViewModel doctor in doctors)
+            {
+                doctor.ShowInfo = new ShowEmployeeInfoCommand(navigationStore, employee);
+            }
         }
     }
 }

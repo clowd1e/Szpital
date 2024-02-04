@@ -1,7 +1,9 @@
 ﻿using System.Collections.ObjectModel;
+using Szpital.Commands;
 using Szpital.DbContexts;
 using Szpital.Models;
 using Szpital.Stores;
+using Szpital.ViewModels.Manager;
 
 namespace Szpital.ViewModels.GeneralManager
 {
@@ -14,6 +16,11 @@ namespace Szpital.ViewModels.GeneralManager
         public GeneralManagerEmployeesViewModel(NavigationStore navigationStore, MainViewModel mainViewModel, Employee employee)
         {
             employees = DbContext.GetAllGMEmployees();
+
+            foreach (GMDListItemViewModel _employee in employees)
+            {
+                _employee.ShowInfo = new ShowEmployeeInfoCommand(navigationStore, employee);
+            }
         }
     }
 }

@@ -176,6 +176,10 @@
                             <DataTemplate DataType="{x:Type viewmodels:ChangePasswordViewModel}">
                                 <views:ChangePasswordView></views:ChangePasswordView>
                             </DataTemplate>
+
+                            <DataTemplate DataType="{x:Type viewmodels:EmployeeInfoViewModel}">
+                                <views:EmployeeInfoView></views:EmployeeInfoView>
+                            </DataTemplate>
                         </Grid.Resources>
 
                         <ContentControl Content="{Binding CurrentViewModel}" />

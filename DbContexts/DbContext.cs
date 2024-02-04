@@ -268,5 +268,26 @@ namespace Szpital.DbContexts
 
             return pesels;
         }
+
+        public static Employee GetEmployeeInfo(int employeeId)
+        {
+            Employee employee = null;
+            using (SqlConnection connection = new SqlConnection(connectionStr))
+            {
+                connection.Open();
+                string selectEmployeeQuery = $@"select * from Employees where Employee_id = {employeeId}";
+
+                using (SqlCommand selectEmployeeCommand = new SqlCommand(selectEmployeeQuery, connection))
+                using (SqlDataReader reader = selectEmployeeCommand.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        employee = MapDataToEmployee(reader);
+                    }
+                }
+            }
+
+            return employee;
+        }
     }
 }

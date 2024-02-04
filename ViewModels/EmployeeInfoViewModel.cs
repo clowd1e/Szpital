@@ -5,11 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using Szpital.DbContexts;
 using Szpital.Models;
+using Szpital.Stores;
 
 namespace Szpital.ViewModels
 {
     public class EmployeeInfoViewModel : ViewModelBase
     {
+        private readonly NavigationStore navigationStore;
+        private readonly Employee currentUser;
+
         private readonly Employee employee;
         public int EmployeeId => employee.EmployeeId;
         public string FirstName => employee.FirstName;
@@ -24,5 +28,12 @@ namespace Szpital.ViewModels
         public string EmploymentDate => employee.EmploymentDate.ToShortDateString();
         public string Salary => string.Format("{0:0,0.00}", Convert.ToDouble(decimal.Round(employee.Salary, 2).ToString()));
         public string Email => employee.Email;
+
+        public EmployeeInfoViewModel(NavigationStore navigationStore, Employee currentUser, Employee employee)
+        {
+            this.navigationStore = navigationStore;
+            this.currentUser = currentUser;
+            this.employee = employee;
+        }
     }
 }

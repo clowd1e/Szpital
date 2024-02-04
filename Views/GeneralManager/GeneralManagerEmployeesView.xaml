@@ -108,7 +108,7 @@
                                         <Button HorizontalAlignment="Center"
                                                 Style="{StaticResource ListShowButton}"
                                             VerticalAlignment="Center"
-                                             Command="{Binding ShowInfo}" CommandParameter="{Binding ElementName=EmployeeId, Path=Text}">
+                                             Command="{Binding ShowInfo}" CommandParameter="{Binding EmployeeId}">
                                             <Button.Content>
                                                 <TextBlock Text="Pokaż">
                                                     <TextBlock.TextDecorations>
