@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Runtime.InteropServices.Marshalling;
 using System.Security.Cryptography.X509Certificates;
 using System.Windows.Input;
 using Szpital.Commands;
@@ -19,6 +20,8 @@ namespace Szpital.ViewModels.Manager
         public ManagerDoctorsViewModel(NavigationStore navigationStore, MainViewModel mainViewModel, Employee employee)
         {
             doctors = DbContext.GetManagerDoctors(employee);
+
+            ShowInfo = new ShowEmployeeInfoCommand(navigationStore, employee);
         }
     }
 }
