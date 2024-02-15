@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,7 +30,7 @@ namespace Szpital.ViewModels.Doctor
             this.navigationStore = navigationStore;
             this.mainViewModel = mainViewModel;
 
-            ChangeToVisits = new DoctorHomeNavigateCommand(navigationStore, nameof(ChangeToVisits), doctorMenuViewModel, new DoctorVisitsViewModel());
+            ChangeToVisits = new DoctorHomeNavigateCommand(navigationStore, nameof(ChangeToVisits), doctorMenuViewModel, new DoctorVisitsViewModel(navigationStore, mainViewModel, employee, account));
             ChangeToUserInfo = new DoctorHomeNavigateCommand(navigationStore, nameof(ChangeToUserInfo), doctorMenuViewModel, new UserInfoViewModel(navigationStore, mainViewModel, employee, account));
 
             navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
