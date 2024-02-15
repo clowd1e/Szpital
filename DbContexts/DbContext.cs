@@ -1,20 +1,23 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using Szpital.Exceptions;
 using Szpital.Models;
+using Szpital.ViewModels;
 using Szpital.ViewModels.GeneralManager;
 using Szpital.ViewModels.Manager;
+using static Szpital.ViewModels.VisitViewModel;
 
 namespace Szpital.DbContexts
 {
     public static class DbContext
     {
-        private const string connectionStr = "Data source=DESKTOP-G7VL8PD\\SQLEXPRESS;Initial catalog=Szpital;Integrated Security=True";
+        private const string connectionStr = "Data source=DESKTOP-HJ1SM1F\\SQLEXPRESS;Initial catalog=Szpital;Integrated Security=True";
 
         public static Account IdentifyUser(string username, string password)
         {
@@ -288,6 +291,108 @@ namespace Szpital.DbContexts
             }
 
             return employee;
+        }
+
+        public static Patient GetPatient(int patientId)
+        {
+            Patient patient = null;
+            using (SqlConnection connection = new SqlConnection(connectionStr))
+            {
+                connection.Open();
+                string selectPatientQuery = $@"select * from Patients where Patient_id = {patientId}";
+
+                using (SqlCommand selectPatientCommand = new SqlCommand(selectPatientQuery, connection))
+                using (SqlDataReader reader = selectPatientCommand.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        patient = MapDataToPatient(reader);
+                    }
+                }
+            }
+
+            return patient;
+        }
+
+        private static Patient MapDataToPatient(SqlDataReader reader)
+        {
+            Patient patient = new Patient(
+                (int)reader["Patient_id"],
+                reader["First_name"].ToString(),
+                reader["Last_name"].ToString(),
+                reader["Pesel"].ToString(),
+                (DateTime)reader["Birth_date"],
+                reader["City"].ToString(),
+                reader["Address_"].ToString(),
+                reader["Phone_number"].ToString()
+                );
+            
+            return patient;
+        }
+
+
+        public static ObservableCollection<VisitViewModel> GetVisits(int doctorId)
+        {
+            ObservableCollection<VisitViewModel> visits = new ObservableCollection<VisitViewModel>();
+            using (SqlConnection connection = new SqlConnection(connectionStr))
+            {
+                connection.Open();
+                string selectDoctorVisitDatesQuery = $@"select distinct Year(Visit_date) Year, Month(Visit_date) Month, Day(Visit_date) Day from Visits where Doctor_id = {doctorId}";
+
+                using (SqlCommand selectDoctorVisitDatesCommand = new SqlCommand(selectDoctorVisitDatesQuery, connection))
+                using (SqlDataReader reader = selectDoctorVisitDatesCommand.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        VisitViewModel visit = new VisitViewModel(new VisitDate(
+                            (int)reader["Day"],
+                            (int)reader["Month"],
+                            (int)reader["Year"]
+                            ));
+                        visit.Items = DbContext.GetVisit(visit, doctorId);
+
+                        visits.Add(visit);
+                    }
+                }
+            }
+
+            return visits;
+        }
+
+        private static ObservableCollection<VisitItem> GetVisit(VisitViewModel visitDate, int doctorId)
+        {
+            ObservableCollection<VisitItem> visits = new ObservableCollection<VisitItem>();
+            using (SqlConnection connection = new SqlConnection(connectionStr))
+            {
+                connection.Open();
+                string selectDoctorDateVisitsQuery = $@"select * from Visits where Year(Visit_date) = {visitDate.Year} and Month(Visit_date) = {visitDate.Month} and Day(Visit_date) = {visitDate.Day} and Doctor_id = {doctorId}";
+
+                using (SqlCommand selectDoctorDateVisitsCommand = new SqlCommand(selectDoctorDateVisitsQuery, connection))
+                using (SqlDataReader reader = selectDoctorDateVisitsCommand.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        VisitItem visit = MapDataToVisit(reader);
+                        visits.Add(visit);
+                    }
+                }
+            }
+
+            return visits;
+        }
+
+        private static VisitItem MapDataToVisit(SqlDataReader reader)
+        {
+            VisitItem visitItem = new VisitItem(new Visit(
+                            (int)reader["Visit_id"],
+                            (int)reader["Patient_id"],
+                            (int)reader["Doctor_id"],
+                            (DateTime)reader["Visit_date"],
+                            (int)reader["Office_no"],
+                            reader["Comments"].ToString()
+                            ));
+
+            return visitItem;
         }
     }
 }
