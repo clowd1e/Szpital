@@ -23,6 +23,7 @@ namespace Szpital.ViewModels.Doctor
             this.mainViewModel = mainViewModel;
             this.employee = employee;
             this.account = account;
+            //
         }
     }
 }
