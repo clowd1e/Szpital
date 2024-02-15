@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +13,7 @@ namespace Szpital.ViewModels
     public class LoginWindowViewModel : ViewModelBase
     {
 
-        private string username;
+        private string username = "agaadamowska";
         public string Username
         {
             get { return username; }
@@ -24,7 +24,7 @@ namespace Szpital.ViewModels
             }
         }
 
-        private string password;
+        private string password = "egupxRTf";
         public string Password
         {
             get { return password; }
