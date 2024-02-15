@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -63,7 +63,7 @@ namespace Szpital.ViewModels.Doctor
 
             ChangeToHome = new NavigateCommand(navigationStore, new DoctorHomeViewModel(navigationStore, mainViewModel, this, employee, account));
             ChangeToUserInfo = new NavigateCommand(navigationStore, new UserInfoViewModel(navigationStore, mainViewModel, employee, account));
-            ChangeToVisits = new NavigateCommand(navigationStore, new DoctorVisitsViewModel());
+            ChangeToVisits = new NavigateCommand(navigationStore, new DoctorVisitsViewModel(navigationStore, mainViewModel, employee, account));
             Logout = new LogoutCommand();
 
             navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
