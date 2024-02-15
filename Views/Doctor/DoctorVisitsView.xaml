@@ -1,14 +1,77 @@
-﻿<UserControl x:Class="Szpital.Views.Doctor.DoctorVisitsView"
+<UserControl x:Class="Szpital.Views.Doctor.DoctorVisitsView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Szpital.Views.Doctor" xmlns:doctor="clr-namespace:Szpital.ViewModels.Doctor"
+             xmlns:local="clr-namespace:Szpital.Views.Doctor" xmlns:doctor="clr-namespace:Szpital.ViewModels.Doctor" d:DataContext="{d:DesignInstance Type=doctor:DoctorVisitsViewModel}"
              mc:Ignorable="d">
-    <UserControl.DataContext>
-        <doctor:DoctorVisitsViewModel></doctor:DoctorVisitsViewModel>
-    </UserControl.DataContext>
     <Border CornerRadius="0 0 10 0">
-        
+        <ScrollViewer HorizontalScrollBarVisibility="Auto">
+            <Grid Margin="50" Width="900" Height="600">
+                <ListView ItemsSource="{Binding Visits}">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalAlignment" Value="Stretch" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.View>
+                        <GridView>
+                            <GridView.ColumnHeaderContainerStyle>
+                                <Style TargetType="GridViewColumnHeader">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </Style>
+                            </GridView.ColumnHeaderContainerStyle>
+                            <GridViewColumn Width="auto">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Height="auto" VerticalAlignment="Top" Orientation="Horizontal">
+                                            <TextBlock Text="{Binding Day}" FontSize="20" Margin="10" />
+                                            <StackPanel Orientation="Vertical" Margin="10">
+                                                <TextBlock Text="{Binding WeekDay}" />
+                                                <TextBlock Text="{Binding MonthYear}" />
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn Width="auto">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+
+                                        <ListView ItemsSource="{Binding Items}">
+                                            <ListView.View>
+                                                <GridView>
+                                                    <GridView.ColumnHeaderContainerStyle>
+                                                        <Style TargetType="GridViewColumnHeader">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                        </Style>
+                                                    </GridView.ColumnHeaderContainerStyle>
+
+                                                    <GridViewColumn Width="auto">
+                                                        <GridViewColumn.CellTemplate>
+                                                            <DataTemplate>
+                                                                <StackPanel Height="auto" VerticalAlignment="Top" Orientation="Horizontal">
+                                                                    <TextBlock Text="{Binding VisitTime}" />
+                                                                    <TextBlock Text="{Binding Room}" />
+                                                                    <Button Content="{Binding PatientFullName}" />
+                                                                    <TextBlock Width="300" TextWrapping="Wrap" Text="{Binding Comments}" />
+                                                                </StackPanel>
+                                                            </DataTemplate>
+                                                        </GridViewColumn.CellTemplate>
+                                                    </GridViewColumn>
+
+                                                </GridView>
+                                            </ListView.View>
+                                        </ListView>
+                                        
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+        </ScrollViewer>
     </Border>
 </UserControl>
