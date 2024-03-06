@@ -11,6 +11,7 @@
                 <ResourceDictionary Source="/Styles/UserHomeStyle.xaml" />
                 <ResourceDictionary Source="/Styles/MDListStyles.xaml" />
                 <ResourceDictionary Source="/Styles/AddPatientStyles.xaml" />
+                <ResourceDictionary Source="/Styles/VisitsStyles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
