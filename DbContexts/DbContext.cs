@@ -1,3 +1,4 @@
+using BCrypt.Net;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -19,13 +20,58 @@ namespace Szpital.DbContexts
     {
         private const string connectionStr = "Data source=DESKTOP-HJ1SM1F\\SQLEXPRESS;Initial catalog=Szpital;Integrated Security=True";
 
+
+        private static void HashAllPasswords()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionStr))
+            {
+                connection.Open();
+                List<string> passwords = GetAllPasswords();
+
+                for (int i = 0; i < passwords.Count; i++)
+                {
+                    string passwordHash = BCrypt.Net.BCrypt.EnhancedHashPassword(passwords[i], 13);
+
+                    int j = i;
+                    string updatePasswordsQuery = $@"update Accounts set Password_ = '{passwordHash}' where Employee_id = {++j}";
+
+                    using (SqlCommand updatePasswordsCommand = new SqlCommand(updatePasswordsQuery, connection))
+                    {
+                        updatePasswordsCommand.ExecuteNonQuery();
+                    }
+                }
+            }
+        }
+
+        private static List<string> GetAllPasswords()
+        {
+            List<string> passwords = new List<string>();
+            using (SqlConnection connection = new SqlConnection(connectionStr))
+            {
+                connection.Open();
+                string selectPasswordsQuery = $@"select Password_ from Accounts";
+
+                using (SqlCommand selectPasswordCommand  = new SqlCommand(selectPasswordsQuery, connection))
+                using (SqlDataReader reader = selectPasswordCommand.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        passwords.Add(reader["Password_"].ToString());
+                    }
+                }
+            }
+
+            return passwords;
+        }
+
         public static Account IdentifyUser(string username, string password)
         {
             Account? result = null;
             using (SqlConnection connection = new SqlConnection(connectionStr))
             {
                 connection.Open();
-                string selectAccountQuery = $@"select * from Accounts where Username = '{username}' and Password_ = '{password}'";
+                
+                string selectAccountQuery = $@"select * from Accounts where Username = '{username}'";
 
                 using (SqlCommand selectLoginCommand = new SqlCommand(selectAccountQuery, connection))
                 using (SqlDataReader reader = selectLoginCommand.ExecuteReader())
@@ -37,6 +83,10 @@ namespace Szpital.DbContexts
                 }
             }
             if (result is null)
+            {
+                throw new UserIdentifyException("Niepoprawne hasło lub użytkownik.");
+            }
+            else if (!BCrypt.Net.BCrypt.EnhancedVerify(password, result.Password))
             {
                 throw new UserIdentifyException("Niepoprawne hasło lub użytkownik.");
             }
@@ -143,7 +193,10 @@ namespace Szpital.DbContexts
             using (SqlConnection connection = new SqlConnection(connectionStr))
             {
                 connection.Open();
-                string updatePasswordQuery = $@"update Accounts set Password_ = '{newPassword}' where Employee_id = {account.EmployeeId}";
+
+                string passwordHash = BCrypt.Net.BCrypt.EnhancedHashPassword(newPassword, 13);
+
+                string updatePasswordQuery = $@"update Accounts set Password_ = '{passwordHash}' where Employee_id = {account.EmployeeId}";
 
                 using (SqlCommand updatePasswordCommand = new SqlCommand(updatePasswordQuery, connection))
                 {

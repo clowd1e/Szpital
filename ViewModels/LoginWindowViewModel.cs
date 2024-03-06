@@ -13,7 +13,7 @@ namespace Szpital.ViewModels
     public class LoginWindowViewModel : ViewModelBase
     {
 
-        private string username = "agaadamowska";
+        private string username = "beakuwalska";
         public string Username
         {
             get { return username; }
@@ -24,7 +24,7 @@ namespace Szpital.ViewModels
             }
         }
 
-        private string password = "egupxRTf";
+        private string password = "3M88KBl9";
         public string Password
         {
             get { return password; }

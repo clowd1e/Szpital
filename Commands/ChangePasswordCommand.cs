@@ -27,7 +27,7 @@ namespace Szpital.Commands
             try
             {
                 string? currentPassword = DbContext.GetCurrentPassword(account);
-                if (currentPassword != changePasswordViewModel.OldPassword)
+                if (!BCrypt.Net.BCrypt.EnhancedVerify(changePasswordViewModel.OldPassword, currentPassword))
                 {
                     throw new InvalidOldPasswordException("Niepoprawne stare hasło.");
                 }
